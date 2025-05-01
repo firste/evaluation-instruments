@@ -38,8 +38,11 @@ Both GPT-o3-mini (2024-01-31) and DeepSeek-R1 761B were analyzed during valiatio
 - Organized  
 - Comprehensible  
 - Succinct  
-- Synthesized  
-- Stigmatizing  
+- Synthesized
+- Abstraction
+- Stigmatizing 
+  - voice_note: Do the source notes contain stigmatizing language
+  - voice_summ: Does the summary contain stigmatizing language
 
 See the full, validated instrument here:  
 👉 [PDSQI-9 Rubric Repository](https://git.doit.wisc.edu/smph-public/dom/uw-icu-data-science-lab-public/pdsqi-9)
