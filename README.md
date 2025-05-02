@@ -18,7 +18,7 @@ pip install .
 
 ### Getting Started
 
-Navigate to the instrument of your choice, such as the [PDSQI-9 notebook](https://github.com/epic-open-source/evaluation-instruments/blob/main/instruments/pdsqi_9/PDSQI_annotated.ipynb).
+Navigate to the instrument of your choice, such as the [PDSQI-9](https://github.com/epic-open-source/evaluation-instruments/blob/main/instruments/pdsqi_9/README.md).
 
 Using an instrument typically involves two steps:
 

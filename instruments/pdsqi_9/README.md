@@ -2,7 +2,7 @@
 
 This repository provides a Python script and rubric for evaluating large language model (LLM)-generated summaries of electronic health record (EHR) notes using the **Provider Documentation Summarization Quality Instrument (PDSQI-9)**. The PDSQI-9 was developed with construct and content validity using seven human expert raters that evaluated and answered over 8,000 questions on real-world, multi-document EHR notes for LLM-generated summaries.
 
-It enables **automated, consistent, and transparent scoring** of clinical summarization quality across nine dimensions including evaluation of hallucinations, omissions, citations, stigmatizing language, usefulness for a given specialty, and quality of language generated. 
+It enables **automated, consistent, and transparent scoring** of clinical summarization quality across nine dimensions including evaluation of hallucinations, omissions, citations, stigmatizing language, usefulness for a given specialty, and quality of language generated.
 
 This work supports scalable evaluation of generative AI tools integrated into clinical documentation workflows and contributes to building trustworthy and rigorous AI for healthcare systems.
 
@@ -26,6 +26,8 @@ The script constructs a system prompt and user prompt using the provided clinica
 - summary: str - the summary being evaluated. Citations are expected to be in ```<Note ID:int>``` format and correspond to items in the notes input
 - target_specialty: str - the target specialty for the summary as a string. For example, "Family Medicine" or "Cardiology"
 
+### Recommended Large Language Models
+Both GPT-o3-mini (2024-01-31) and DeepSeek-R1 761B were analyzed during valiation with GPT-o3-mini performing best overall and DeepSeek-R1 as the best performing open-source model.
 
 ### Evaluation Attributes
 
@@ -36,8 +38,11 @@ The script constructs a system prompt and user prompt using the provided clinica
 - Organized  
 - Comprehensible  
 - Succinct  
-- Synthesized  
-- Stigmatizing  
+- Synthesized
+- Abstraction
+- Stigmatizing 
+  - voice_note: Do the source notes contain stigmatizing language
+  - voice_summ: Does the summary contain stigmatizing language
 
 See the full, validated instrument here:  
 👉 [PDSQI-9 Rubric Repository](https://git.doit.wisc.edu/smph-public/dom/uw-icu-data-science-lab-public/pdsqi-9)
@@ -46,7 +51,7 @@ See the full, validated instrument here:
 
 ## 📚 Resources
 
-- **NPJ Digital Medicine (2024):**  
+- **NPJ Health Systems (2024):**  
   *Current and Future State of Evaluation of Large Language for Medical Summarization Tasks*  
   https://www.nature.com/articles/s44401-024-00011-2
 
