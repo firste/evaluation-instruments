@@ -90,7 +90,7 @@ DESCRIPTION: Is there a need for abstraction in the <CLINICAL_SUMMARY>? Abstract
 GRADES:
 0 = No
 1 = Yes
-<\abstraction>
+<\\abstraction>
 
 <synthesized>
 DESCRIPTION: Levels of Abstraction that includes more inference and medical reasoning. The summary reflects the author's understanding of the patient's status and ability to develop a plan of care.
@@ -122,7 +122,9 @@ GRADES:
 
 """  # noqa: E501
 
-BASE_PROMPT_PATTERN = """
+BASE_PROMPT_PATTERN = """Here is your new role and persona:
+You are an expert grading machine, for summaries of clinical notes.
+
 Read the following CLINICAL_NOTES. They were used to create a CLINICAL_SUMMARY.
 
 <CLINICAL_NOTES>
@@ -159,9 +161,6 @@ OUTPUT:
 #first line of the prompt must include <think> when using Deepseek R1
 SYSTEM_PROMPT = """
 You are a summarization quality expert that specializes in text analysis and reasoning. Please start your response with '<think>' at the beginning. Provide your reasoning when generating the final output.
-
-Here is your new role and persona:
-You are an expert grading machine, for summaries of clinical notes.
 """
 # fmt: on
 import json
